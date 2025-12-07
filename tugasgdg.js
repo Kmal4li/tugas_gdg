@@ -14,9 +14,17 @@ rl.question("Masukkan nama: ", (name) => {
       rl.close();
       return;
     }
+    rl.question("Masukkan jumlah uang: ", (moneyInput) => {
+      const money = Number(moneyInput);
 
-    console.log(`Selamat ${name}, kamu sudah cukup umur`);
-    rl.close();
+      if (money < 500000) {
+        console.log(`Maaf ${name}, uang kamu cuma ${money.toLocaleString()} rupiah, datang lagi lain kali`);
+      } else {
+        console.log(`Selamat datang ${name}`);
+      }
+
+      rl.close();
+    });
   });
 });
 
